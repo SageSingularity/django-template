@@ -15,17 +15,33 @@ then use Django's `manage.py` to start the server.
 python manage.py runserver
 ```
 
+## Creating the Virtual Environment
+May be required for dev env setup.
+```bash
+python3 -m venv venv
+```
+
 ## Activating the Virtual Environment
 ```bash
 source venv/bin/activate
 ```
+
+## Installing Python Packages in Virtual Environment
+May be required for dev env setup.
+```bash
+pip install -r requirements.txt
+```
+
+Note that there may be some system dependencies that 
+need to be installed i.e. `brew install postgresql`.
+
 ## Deactivating the Virtual Environment
 ```bash
 deactivate
 ```
 
 # Docker
-This project is setup to utilize [Docker](https://www.docker.com/).
+This project is set up to utilize [Docker](https://www.docker.com/).
 
 ## Creating a requirements.txt from venv
 The `venv` module allows running a virtual environment locally
@@ -49,7 +65,7 @@ pip3 freeze > requirements.txt
 
 ## Build
 ```bash
-docker build -f docker/Dockerfile -t django:1.0.0 .
+docker compose up --build
 ```
 
 # Project Organization
